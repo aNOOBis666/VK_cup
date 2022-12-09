@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="App.Theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent_primary</item>
+        <item name="colorPrimaryDark">@color/background_primary</item>
+        <item name="android:windowBackground">@color/background_primary</item>
+        <item name="android:textColor">@color/text_reversed</item>
+    </style>
+
+    <style name="ChipStyle">
+        <item name="android:paddingTop">9dp</item>
+        <item name="android:paddingBottom">11dp</item>
+        <item name="android:paddingStart">13dp</item>
+        <item name="android:paddingEnd">13dp</item>
+        <item name="android:background">@drawable/drw_chip_background</item>
+    </style>
+    
+    <style name="ButtonStyle">
+        <item name="android:background">@drawable/drw_button_background</item>
+        <item name="android:paddingVertical">29dp</item>
+        <item name="android:paddingHorizontal">51dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+</resources>

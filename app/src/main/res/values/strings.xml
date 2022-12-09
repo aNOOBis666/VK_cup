@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">VK_Cup</string>
+    <string name="preferences_choosing_description">Отметьте то, что вам интересно, чтобы настроить Дзен</string>
+    <string name="preferences_choosing_later">Позже</string>
+    <string name="preferences_choosing_enter">Продолжить</string>
+    <string name="preferences_choosing_back">Вернуться</string>
+    <string-array name="preferences_types">
+        <item>Юмор</item>
+        <item>Еда</item>
+        <item>Кино</item>
+        <item>Рестораны</item>
+        <item>Прогулки</item>
+        <item>Политика</item>
+        <item>Новости</item>
+        <item>Автомобили</item>
+        <item>Сериалы</item>
+        <item>Рецепты</item>
+        <item>Работа</item>
+        <item>Отдых</item>
+        <item>Спорт</item>
+        <item>Политика 2</item>
+        <item>Новости 2</item>
+        <item>Юмор 2</item>
+        <item>Еда 2</item>
+        <item>Кино 2</item>
+        <item>Рестораны 2</item>
+        <item>Прогулки 2</item>
+        <item>Политика 3</item>
+        <item>Новости 3</item>
+        <item>Юмор 3</item>
+        <item>Еда 3</item>
+        <item>Кино 3</item>
+    </string-array>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/ripple_color">
+    <item>
+        <level-list>
+            <item android:maxLevel="0">
+                <shape android:shape="rectangle">
+                    <corners android:radius="12dp" />
+                    <solid android:color="@color/accent_secondary" />
+                </shape>
+            </item>
+            <item android:maxLevel="1">
+                <shape android:shape="rectangle">
+                    <corners android:radius="12dp" />
+                    <solid android:color="@color/accent_primary" />
+                </shape>
+            </item>
+        </level-list>
+    </item>
+</ripple>

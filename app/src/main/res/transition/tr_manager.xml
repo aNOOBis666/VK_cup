@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionManager xmlns:android="http://schemas.android.com/apk/res/android">
+    <transition
+        android:fromScene="@layout/fmt_preferences_choosing"
+        android:toScene="@layout/fmt_entry"
+        android:transition="@transition/tr_prefs_to_exit">
+    </transition>
+</transitionManager>

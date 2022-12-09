@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_primary">#000000</color>
+    <color name="background_secondary">#1FFFFFFF</color>
+    <color name="background_reversed">#FFFFFF</color>
+
+    <color name="accent_primary">#FF5317</color>
+    <color name="accent_secondary">#2BFFFFFF</color>
+
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#7AFFFFFF</color>
+    <color name="text_reversed">#FFFFFF</color>
+
+    <color name="separator_color">#45FFFFFF</color>
+    <color name="ripple_color">#FFFFFF</color>
+</resources>
