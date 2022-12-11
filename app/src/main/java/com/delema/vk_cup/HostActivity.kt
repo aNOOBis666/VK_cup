@@ -29,8 +29,7 @@ class HostActivity : AppCompatActivity(R.layout.ac_host), IFragmentsNavigation,
     }
 
     private fun setStartDestination() {
-        val isFirst = getIsFirstLaunch()
-        if (isFirst == true) openFragment(PreferencesChoosingFragment())
+        if (getIsFirstLaunch() == true) openFragment(PreferencesChoosingFragment())
         else openFragment(EntryFragment())
     }
 
