@@ -20,6 +20,10 @@ import kotlin.math.hypot
 
 class EntryFragment : Fragment(R.layout.fmt_entry) {
 
+    companion object {
+        private const val DOT = ", "
+    }
+
     private var fragmentInteractor: IFragmentsNavigation? = null
     private var preferencesManager: IPreferencesManager? = null
 
@@ -71,7 +75,7 @@ class EntryFragment : Fragment(R.layout.fmt_entry) {
                 chosenCategories.map {
                     categoriesString.append(it)
                     if (chosenCategories.indexOf(it) + 1 != chosenCategories.size) categoriesString.append(
-                        ", "
+                        DOT
                     )
                 }
                 "${getString(R.string.entry_title)} $categoriesString"
