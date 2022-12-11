@@ -62,6 +62,7 @@ class PreferencesChoosingFragment : Fragment(R.layout.fmt_preferences_choosing) 
         initAdapter()
 
         with(viewBinding) {
+            viewBinding.submit.isEnabled = prefsChoosingAdapter.getChangedItems().isNotEmpty()
             later.setOnClickListener { fragmentInteractor?.openFragment(EntryFragment()) }
             submit.setOnClickListener { fragmentInteractor?.openFragment(EntryFragment()) }
         }

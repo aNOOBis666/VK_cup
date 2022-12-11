@@ -2,6 +2,7 @@ package com.delema.vk_cup.preferences_choosing_screen.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import com.delema.vk_cup.databinding.ViewCategoryItemBinding
+import com.delema.vk_cup.utils.toInt
 
 class PreferencesChoosingViewHolder(
     private val binding: ViewCategoryItemBinding,
@@ -11,6 +12,7 @@ class PreferencesChoosingViewHolder(
 
     fun bind(item: String) = with(binding) {
         categoryTitle.text = item
+        setLevel(differedItems.contains(item).toInt())
 
         root.setOnClickListener {
             addOrRemoveItem(item)
