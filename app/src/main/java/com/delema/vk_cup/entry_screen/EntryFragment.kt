@@ -4,12 +4,11 @@ import android.animation.Animator
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.doOnLayout
-import androidx.core.view.marginStart
 import androidx.fragment.app.Fragment
-import by.kirich1409.viewbindingdelegate.viewBinding
 import com.delema.vk_cup.R
-import com.delema.vk_cup.databinding.FmtEntryBinding
 import com.delema.vk_cup.navigation.IFragmentsNavigation
 import com.delema.vk_cup.navigation.RadialAnimator
 import com.delema.vk_cup.navigation.RadialAnimator.Companion.PREFERENCES_CHOOSING_BUTTON_MARGIN
@@ -20,7 +19,8 @@ class EntryFragment: Fragment(R.layout.fmt_entry) {
 
     private var fragmentInteractor: IFragmentsNavigation? = null
 
-    private val viewBinding by viewBinding(FmtEntryBinding::bind)
+    private var root: ConstraintLayout? = null
+    private var later: TextView? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -29,32 +29,33 @@ class EntryFragment: Fragment(R.layout.fmt_entry) {
 
     override fun onCreateAnimator(transit: Int, enter: Boolean, nextAnim: Int): Animator? {
         return if (!enter) {
-            RadialAnimator().create(
-                viewBinding.root,
-                hypot(
-                    viewBinding.root.width.toDouble(),
-                    viewBinding.root.height.toDouble()
-                ).toFloat(),
-                hypot(
-                    viewBinding.root.width.toDouble(),
-                    viewBinding.root.height.toDouble()
-                ).toFloat()
-            )
+            root?.let { rootView ->
+                RadialAnimator().create(
+                    rootView,
+                    hypot(rootView.width.toDouble(), rootView.height.toDouble()).toFloat(),
+                    hypot(rootView.width.toDouble(), rootView.height.toDouble()).toFloat()
+                )
+            }
         } else null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewBinding.root.doOnLayout {
-            RadialAnimator().create(
-                viewBinding.root,
-                PREFERENCES_CHOOSING_BUTTON_MARGIN,
-                hypot(
-                    viewBinding.root.width.toDouble(),
-                    viewBinding.root.height.toDouble()
-                ).toFloat()
-            ).start()
+        initViews()
+        root?.doOnLayout {
+            root?.let { rootView ->
+                RadialAnimator().create(
+                    rootView,
+                    PREFERENCES_CHOOSING_BUTTON_MARGIN,
+                    hypot(rootView.width.toDouble(), rootView.height.toDouble()).toFloat()
+                ).start()
+            }
         }
-        viewBinding.later.setOnClickListener { fragmentInteractor?.openFragment(PreferencesChoosingFragment()) }
+        later?.setOnClickListener { fragmentInteractor?.openFragment(PreferencesChoosingFragment()) }
+    }
+
+    private fun initViews() {
+        root = view?.findViewById(R.id.root)
+        later = view?.findViewById(R.id.later)
     }
 }

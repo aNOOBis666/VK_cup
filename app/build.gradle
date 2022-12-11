@@ -6,9 +6,6 @@ plugins {
 android {
     namespace 'com.delema.vk_cup'
     compileSdk 33
-    buildFeatures {
-        viewBinding true
-    }
 
     defaultConfig {
         applicationId "com.delema.vk_cup"
@@ -39,8 +36,7 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
-    implementation 'com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6'
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
-    implementation "androidx.fragment:fragment-ktx:1.5.4"
+    implementation 'androidx.fragment:fragment-ktx:1.5.5'
 
 }

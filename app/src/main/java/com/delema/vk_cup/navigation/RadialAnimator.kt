@@ -5,7 +5,7 @@ import android.view.ViewAnimationUtils
 import android.view.ViewGroup
 import android.view.animation.AccelerateDecelerateInterpolator
 
-class RadialAnimator() {
+class RadialAnimator {
 
     companion object {
         const val PREFERENCES_CHOOSING_BUTTON_MARGIN = 400F
