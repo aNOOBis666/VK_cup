@@ -20,7 +20,6 @@ class HostActivity : AppCompatActivity(R.layout.ac_host), IFragmentsNavigation {
     override fun openFragment(fragment: Fragment) {
         supportFragmentManager.commit {
             replace(R.id.fragment_container, fragment)
-            addToBackStack(null)
         }
     }
 }
