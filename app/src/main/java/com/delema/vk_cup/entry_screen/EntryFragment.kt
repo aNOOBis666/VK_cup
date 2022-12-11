@@ -8,7 +8,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.delema.vk_cup.R
 import com.delema.vk_cup.databinding.FmtEntryBinding
 import com.delema.vk_cup.navigation.EntryTransition
-import com.delema.vk_cup.navigation.ExitTransition
 import com.delema.vk_cup.navigation.IFragmentsNavigation
 import com.delema.vk_cup.preferences_choosing_screen.PreferencesChoosingFragment
 

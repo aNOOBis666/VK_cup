@@ -1,5 +1,6 @@
 package com.delema.vk_cup.preferences_choosing_screen
 
+import android.animation.Animator
 import android.content.Context
 import android.os.Bundle
 import android.view.View
@@ -9,7 +10,6 @@ import com.delema.vk_cup.R
 import com.delema.vk_cup.databinding.FmtPreferencesChoosingBinding
 import com.delema.vk_cup.entry_screen.EntryFragment
 import com.delema.vk_cup.navigation.EntryTransition
-import com.delema.vk_cup.navigation.ExitTransition
 import com.delema.vk_cup.navigation.IFragmentsNavigation
 import com.delema.vk_cup.preferences_choosing_screen.adapter.PreferencesChoosingAdapter
 import com.google.android.flexbox.FlexboxLayoutManager
@@ -21,6 +21,7 @@ class PreferencesChoosingFragment : Fragment(R.layout.fmt_preferences_choosing) 
 
     private val viewBinding by viewBinding(FmtPreferencesChoosingBinding::bind)
     private val prefsChoosingAdapter = PreferencesChoosingAdapter(::onClickItem)
+    private val entryTransition = EntryTransition()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -33,7 +34,7 @@ class PreferencesChoosingFragment : Fragment(R.layout.fmt_preferences_choosing) 
 
         with(viewBinding) {
             later.setOnClickListener {
-                fragmentInteractor?.openFragment(EntryFragment())
+                fragmentInteractor?.openFragment(EntryFragment(), this@PreferencesChoosingFragment, entryTransition)
             }
             submit.setOnClickListener { fragmentInteractor?.openFragment(EntryFragment()) }
         }

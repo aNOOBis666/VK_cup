@@ -23,7 +23,7 @@ class EntryTransition : Transition() {
             sceneRoot,
             sceneRoot.width,
             0,
-            200F,
+            400F,
             hypot(sceneRoot.width.toDouble(), sceneRoot.height.toDouble()).toFloat()
         ).apply {
             interpolator = AccelerateDecelerateInterpolator()
