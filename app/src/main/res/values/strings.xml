@@ -31,4 +31,8 @@
         <item>Еда 3</item>
         <item>Кино 3</item>
     </string-array>
+
+    <string name="entry_empty_title">Тут бдут отображаться выбранные вами категории</string>
+    <string name="entry_title">Выбранные вам категории: </string>
+
 </resources>

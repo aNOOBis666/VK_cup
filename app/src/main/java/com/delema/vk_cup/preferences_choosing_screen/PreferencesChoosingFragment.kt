@@ -9,9 +9,9 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.doOnLayout
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.delema.vk_cup.R
+import com.delema.vk_cup.data_store.IPreferencesManager
 import com.delema.vk_cup.entry_screen.EntryFragment
 import com.delema.vk_cup.navigation.IFragmentsNavigation
 import com.delema.vk_cup.navigation.RadialAnimator
@@ -24,10 +24,9 @@ import kotlin.math.hypot
 class PreferencesChoosingFragment : Fragment(R.layout.fmt_preferences_choosing) {
 
     private var fragmentInteractor: IFragmentsNavigation? = null
+    private var preferencesManager: IPreferencesManager? = null
 
     private val prefsChoosingAdapter = PreferencesChoosingAdapter(::onClickItem)
-    private var preferencesChoosingViewModel: PreferencesChoosingViewModel? = null
-
 
     private var root: ConstraintLayout? = null
     private var later: TextView? = null
@@ -37,7 +36,7 @@ class PreferencesChoosingFragment : Fragment(R.layout.fmt_preferences_choosing) 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         fragmentInteractor = activity as? IFragmentsNavigation
-        preferencesChoosingViewModel = ViewModelProvider(this)[PreferencesChoosingViewModel::class.java]
+        preferencesManager = activity as? IPreferencesManager
     }
 
     override fun onCreateAnimator(transit: Int, enter: Boolean, nextAnim: Int): Animator? {
@@ -69,11 +68,8 @@ class PreferencesChoosingFragment : Fragment(R.layout.fmt_preferences_choosing) 
         submit?.isEnabled = prefsChoosingAdapter.getChangedItems().isNotEmpty()
         later?.setOnClickListener { fragmentInteractor?.openFragment(EntryFragment()) }
         submit?.setOnClickListener {
-            preferencesChoosingViewModel?.onSavePreferences(
-                prefsChoosingAdapter.getChangedItems().toSet()
-            )
-            val a= preferencesChoosingViewModel?.onGetPreferences()
-            val b = a
+            preferencesManager?.saveIsFirstLaunch()
+            preferencesManager?.savePreferences(prefsChoosingAdapter.getChangedItems().toSet())
             fragmentInteractor?.openFragment(EntryFragment())
         }
     }
