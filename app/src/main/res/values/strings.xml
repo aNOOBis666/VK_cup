@@ -33,6 +33,6 @@
     </string-array>
 
     <string name="entry_empty_title">Тут бдут отображаться выбранные вами категории</string>
-    <string name="entry_title">Выбранные вам категории: </string>
+    <string name="entry_title">Выбранные вами категории: </string>
 
 </resources>

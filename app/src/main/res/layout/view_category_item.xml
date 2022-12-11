@@ -5,7 +5,6 @@
     android:layout_width="wrap_content"
     android:layout_height="@dimen/category_item_height"
     android:layout_margin="@dimen/category_item_margin"
-    android:foreground="@drawable/drw_category_item_foreground"
     android:background="@drawable/drw_category_item_background">
 
     <TextView
