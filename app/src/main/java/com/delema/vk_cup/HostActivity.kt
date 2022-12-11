@@ -9,7 +9,8 @@ import com.delema.vk_cup.entry_screen.EntryFragment
 import com.delema.vk_cup.navigation.IFragmentsNavigation
 import com.delema.vk_cup.preferences_choosing_screen.PreferencesChoosingFragment
 
-class HostActivity : AppCompatActivity(R.layout.ac_host), IFragmentsNavigation, IPreferencesManager {
+class HostActivity : AppCompatActivity(R.layout.ac_host), IFragmentsNavigation,
+    IPreferencesManager {
 
     companion object {
         private const val STORAGE_NAME = "vk_cup_storage"
